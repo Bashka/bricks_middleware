@@ -1,0 +1,30 @@
+{
+	"name": "bashka/bricks_middleware",
+	"description": "Middleware",
+	"type": "project",
+	"license": "GPL-3.0",
+	"authors": [
+	    {
+	        "name": "Artur Sh. Mamedbekov",
+	        "email": "Artur-Mamedbekov@yandex.ru"
+	    }
+	],
+	"require": {
+		"php": ">= 5.5",
+		"psr/http-message": "^1.0"
+	},
+	"autoload": {
+	    "psr-4": {
+	  	 	"Bricks\\Middleware\\": "src/"
+	    }
+	},
+	"require-dev": {
+		"phpunit/phpunit": "^4.0",
+		"zendframework/zend-diactoros": "^1.0"
+	},
+	"autoload-dev": {
+	    "psr-4": {
+	  	 	"BricksTest\\Middleware\\": "test/"
+	    }
+	}
+}
