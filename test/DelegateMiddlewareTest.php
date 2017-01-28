@@ -11,8 +11,9 @@ use Bricks\Middleware\DelegateMiddleware;
  */
 class DelegateMiddlewareTest extends PHPUnit_Framework_TestCase{
   public function testInvoke(){
-    $delegate = new DelegateMiddleware(function($request, $response){
+    $delegate = new DelegateMiddleware(function($request, $response, $next){
       $response->getBody()->write('test');
+      return $response;
     });
     
     $response = call_user_func($delegate, new ServerRequest, new Response);

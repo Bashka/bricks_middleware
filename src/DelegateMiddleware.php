@@ -25,8 +25,8 @@ class DelegateMiddleware implements MiddlewareInterface{
   /**
    * {@inheritdoc}
    */
-  public function __invoke(Request $request, Response $response){
-    $result = call_user_func($this->callable, $request, $response);
+  public function __invoke(Request $request, Response $response, MiddlewareInterface $next = null){
+    $result = call_user_func($this->callable, $request, $response, $next);
     if(!$result instanceof Response){
       $result = $response;
     }
